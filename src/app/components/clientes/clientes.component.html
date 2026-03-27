@@ -48,7 +48,7 @@
             <tr *ngFor="let cliente of clientes">
               <td>{{ cliente.id }}</td>
               <td>{{ cliente.nombre }}</td>
-              <td>{{ cliente.apellidos }}</td>
+              <td>{{ cliente.apellido }}</td>
               <td>{{ cliente.email }}</td>
               <td>{{ cliente.foto || '-' }}</td>
               <td>{{ cliente.createdAt ? (cliente.createdAt | date:'dd/MM/yyyy') : '-' }}</td>

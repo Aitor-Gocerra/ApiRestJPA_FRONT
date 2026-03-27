@@ -64,7 +64,7 @@ export class ClientesComponent implements OnInit {
     this.clienteEditandoId = cliente.id ?? null;
     this.clienteForm.patchValue({
       nombre:    cliente.nombre,
-      apellidos: cliente.apellidos,
+      apellidos: cliente.apellido,
       email:     cliente.email,
       foto:  cliente.foto ?? ''
     });
@@ -109,7 +109,7 @@ export class ClientesComponent implements OnInit {
     if (!cliente.id) return;
 
     const confirmar = confirm(
-      `¿Seguro que deseas eliminar al cliente "${cliente.nombre} ${cliente.apellidos}"?\n\n` +
+      `¿Seguro que deseas eliminar al cliente "${cliente.nombre} ${cliente.apellido}"?\n\n` +
       `⚠️ ATENCIÓN: Esta acción eliminará también todas las facturas asociadas a este cliente. Esta operación no se puede deshacer.`
     );
 
@@ -117,7 +117,7 @@ export class ClientesComponent implements OnInit {
 
     this.clienteService.delete(cliente.id).subscribe({
       next: () => {
-        this.exito = `Cliente "${cliente.nombre} ${cliente.apellidos}" eliminado correctamente.`;
+        this.exito = `Cliente "${cliente.nombre} ${cliente.apellido}" eliminado correctamente.`;
         this.cargarClientes();
       },
       error: (err) => {
