@@ -1,0 +1,92 @@
+<div class="container-fluid py-4">
+
+  <!-- Encabezado -->
+  <div class="mb-3">
+    <h2 class="mb-0">Catálogo de Productos</h2>
+    <p class="text-muted small mb-0">Listado paginado con filtros y ordenación server-side</p>
+  </div>
+
+  <!-- Panel de Filtros -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-light">
+      <strong>🔍 Filtros de búsqueda</strong>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="filtrosForm" (ngSubmit)="aplicarFiltros()">
+        <div class="row g-3 align-items-end">
+
+          <!-- Filtro por Nombre -->
+          <div class="col-md-3">
+            <label class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nombre"
+              placeholder="Filtrar por nombre...">
+          </div>
+
+          <!-- Filtro por Precio -->
+          <div class="col-md-2">
+            <label class="form-label">Precio máximo (€)</label>
+            <input
+              type="number"
+              class="form-control"
+              formControlName="precio"
+              placeholder="Ej: 100"
+              min="0"
+              step="0.01">
+          </div>
+
+          <!-- Filtro Fecha Desde -->
+          <div class="col-md-2">
+            <label class="form-label">Fecha desde</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="fechaDesde">
+          </div>
+
+          <!-- Filtro Fecha Hasta -->
+          <div class="col-md-2">
+            <label class="form-label">Fecha hasta</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="fechaHasta">
+          </div>
+
+          <!-- Botones -->
+          <div class="col-md-3 d-flex gap-2">
+            <button type="submit" class="btn btn-primary flex-fill">
+              Aplicar filtros
+            </button>
+            <button type="button" class="btn btn-outline-secondary" (click)="limpiarFiltros()">
+              Limpiar
+            </button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tabla DataTables -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table id="tablaProductos" class="table table-striped table-hover w-100">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Precio (€)</th>
+              <th>Fecha de Creación</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

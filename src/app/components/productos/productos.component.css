@@ -1,0 +1,12 @@
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+  margin-bottom: 0.5rem;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0.25rem 0.5rem;
+}
+
+table.dataTable thead th {
+  white-space: nowrap;
+}
