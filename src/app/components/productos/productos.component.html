@@ -8,8 +8,9 @@
 
   <!-- Panel de Filtros -->
   <div class="card shadow-sm mb-4">
-    <div class="card-header bg-light">
-      <strong>🔍 Filtros de búsqueda</strong>
+    <div class="card-header bg-light d-flex align-items-center gap-1">
+      <span class="material-icons" style="font-size:20px">filter_list</span>
+      <strong>Filtros de búsqueda</strong>
     </div>
     <div class="card-body">
       <form [formGroup]="filtrosForm" (ngSubmit)="aplicarFiltros()">
@@ -57,11 +58,11 @@
 
           <!-- Botones -->
           <div class="col-md-3 d-flex gap-2">
-            <button type="submit" class="btn btn-primary flex-fill">
-              Aplicar filtros
+            <button type="submit" class="btn btn-primary flex-fill d-flex align-items-center justify-content-center gap-1">
+              <span class="material-icons" style="font-size:18px">search</span> Aplicar filtros
             </button>
-            <button type="button" class="btn btn-outline-secondary" (click)="limpiarFiltros()">
-              Limpiar
+            <button type="button" class="btn btn-outline-secondary d-flex align-items-center gap-1" (click)="limpiarFiltros()">
+              <span class="material-icons" style="font-size:18px">clear</span> Limpiar
             </button>
           </div>
 

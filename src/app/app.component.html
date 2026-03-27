@@ -1,8 +1,8 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" routerLink="/">
-      📋 Facturación
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-1" routerLink="/">
+      <span class="material-icons">receipt_long</span> Facturación
     </a>
     <button
       class="navbar-toggler"
@@ -17,16 +17,18 @@
           <a
             class="nav-link"
             routerLink="/clientes"
-            routerLinkActive="active">
-            👥 Clientes
+            routerLinkActive="active"
+            class="nav-link d-flex align-items-center gap-1">
+            <span class="material-icons" style="font-size:18px">group</span> Clientes
           </a>
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
             routerLink="/productos"
-            routerLinkActive="active">
-            📦 Productos
+            routerLinkActive="active"
+            class="nav-link d-flex align-items-center gap-1">
+            <span class="material-icons" style="font-size:18px">inventory_2</span> Productos
           </a>
         </li>
       </ul>
