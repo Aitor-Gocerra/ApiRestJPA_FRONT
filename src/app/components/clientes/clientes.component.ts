@@ -33,7 +33,7 @@ export class ClientesComponent implements OnInit {
       nombre:    ['', [Validators.required, Validators.minLength(2)]],
       apellidos: ['', [Validators.required, Validators.minLength(2)]],
       email:     ['', [Validators.required, Validators.email]],
-      telefono:  ['']
+      foto:      ['']
     });
   }
 
@@ -66,7 +66,7 @@ export class ClientesComponent implements OnInit {
       nombre:    cliente.nombre,
       apellidos: cliente.apellidos,
       email:     cliente.email,
-      telefono:  cliente.telefono ?? ''
+      foto:  cliente.foto ?? ''
     });
     this.errorMensaje = '';
     this.exito = '';
