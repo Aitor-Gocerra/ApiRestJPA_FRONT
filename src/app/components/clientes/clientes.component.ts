@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Cliente } from '../../models/cliente.model';
 import { ClienteService } from '../../services/cliente.service';
 
+
+
 @Component({
   selector: 'app-clientes',
   templateUrl: './clientes.component.html',
@@ -78,9 +80,19 @@ export class ClientesComponent implements OnInit {
       return;
     }
 
-    const datos: Cliente = this.clienteForm.value;
+    const formValues = this.clienteForm.value;
+
+    const datos: Cliente = {
+      nombre: formValues.nombre,
+      apellido: formValues.apellidos, 
+      email: formValues.email,
+      foto: formValues.foto
+    };
 
     if (this.modoEdicion && this.clienteEditandoId !== null) {
+
+      datos.id = this.clienteEditandoId; 
+      
       this.clienteService.update(this.clienteEditandoId, datos).subscribe({
         next: () => {
           this.exito = 'Cliente actualizado correctamente.';
